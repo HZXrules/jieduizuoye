@@ -20,5 +20,3 @@ class Web():
 class Config():
     mysql = Mysql
     web = Web
-    
-    
