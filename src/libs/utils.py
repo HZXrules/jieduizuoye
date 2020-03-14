@@ -202,6 +202,4 @@ def GetMd5(st):
     
 if __name__ == '__main__':
     pass
-#     print(S2DT("2020-02-05 11:23:09.23"))
-
 
