@@ -24,7 +24,6 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__)) + "/static/upload/"
 FILE_PATH = os.path.dirname(__file__) + "/"
 
 
-
 @app.route('/')
 def index():
     return "Welcome..."
