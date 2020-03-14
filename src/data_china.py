@@ -1,7 +1,5 @@
 #coding: utf8
-'''
-Created on 2020年2月4日
-'''
+
 import sys
 sys.path.append('..')
 
