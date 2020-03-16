@@ -48,7 +48,7 @@
                 </el-row>
             </el-tab-pane>
         </el-tabs>
-        
+
         <!-- <div class="clearfix" style="height: 40px; text-align: left">
             <span>数据来源 · 各地区卫健委官网</span>
             <el-button style="float: right; padding: 3px 0" type="text"></el-button>
@@ -56,7 +56,7 @@
         </div> -->
 
         <!-- 全国 -->
-        
+
     </div>
 
     <div style="height: 20px"></div>
@@ -85,24 +85,24 @@ export default {
             ],
             updateTime: '2020.02.15 02:29',
             tabs: [
-                { 
-                    label: "全国实时疫情", name: 'china', ids: ['ecChina', 'ecBar1'], level: 1, 
+                {
+                    label: "全国实时疫情", name: 'china', ids: ['ecChina', 'ecBar1'], level: 1,
                     allTime: 0, data: null, mapName: 'china'
                 },
                 {
-                    label: "时间序列回放", name: 'chinaTime', ids: ['ecChinaTime', 'ecBarTime1'], level: 1, 
+                    label: "时间序列回放", name: 'chinaTime', ids: ['ecChinaTime', 'ecBarTime1'], level: 1,
                     allTime: 1, data: null, mapName: "china"
                 },
                 {
-                    label: "省实时疫情", name: 'province', ids: ['ecProvince', 'ecBar2'], level: 2, 
+                    label: "省实时疫情", name: 'province', ids: ['ecProvince', 'ecBar2'], level: 2,
                     allTime: 0, data: null, mapName: "420000"
                 },
                 {
-                    label: "省舆情回放", name: 'provinceTime', ids: ['ecProvinceTime', 'ecBarTime2'], 
+                    label: "省舆情回放", name: 'provinceTime', ids: ['ecProvinceTime', 'ecBarTime2'],
                     level: 2, allTime: 1, data: null, mapName: '420000'
-                }, 
+                },
                 {
-                    label: "曲线分析", name: "lineChina", ids: ['ecLineChina'], level: 1, isLine: 1, 
+                    label: "曲线分析", name: "lineChina", ids: ['ecLineChina'], level: 1, isLine: 1,
                     allTime: 1, data: null, mapName: "china"
                 }
             ],
@@ -141,7 +141,7 @@ export default {
             let $this = this;
             let [mapName, level, allTime] = [tab.mapName, tab.level, tab.allTime];
             if (tab.data) return $this.drawGraph(tab);
-            
+
             let key = allTime ? API.GetTimeData : API.GetDataDetails;
             Utils.ajaxData(key, {'level': level, 'name': mapName}, function (rst) {
                 tab.data = rst.data;
@@ -166,7 +166,7 @@ export default {
             ec.on('click', function (d) {
                 if (d.seriesType !== 'map') return;
                 // TODO: 判断三级区域
-                let cTab = $this.tabs[2 + allTime]; 
+                let cTab = $this.tabs[2 + allTime];
                 [cTab.mapName, cTab.data] = [d.data.code, null];
                 $this.activeName = cTab.name;
                 $this.loadMap(cTab);
