@@ -7,7 +7,7 @@
 
 	开发部署：
 		
-		cd www
+		cd www/src
 		
 		npm install
 		
