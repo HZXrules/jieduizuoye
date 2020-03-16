@@ -7,7 +7,7 @@
 
 	开发部署：
 		
-		cd www/src
+		cd www
 		
 		npm install
 		
@@ -19,23 +19,9 @@
 
 	配置文件：src/config.py	
 	
-	启动服务：
-		start.bat
-		
 3.数据库：（Mysql）
 	
 	文件：src/db/epidemic.sql
 	
 	新建数据库epidemic，将该文件导入MySQL即可。（命令行方式：use epidemic; source /root/epidemic.sql;）
 	
-	数据库账号密码在src/config.py中配置
-	
-4.数据：
-	
-	使用API：https://lab.isaaclin.cn/nCoV
-	
-	数据更新：src/data/dxy_record.py （手动）
-	
-	数据清洗：地区标准化 - region_recognition.py
-	
-	自动更新任务：startData.bat 或 ./startData.sh
