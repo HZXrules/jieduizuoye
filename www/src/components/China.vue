@@ -3,12 +3,9 @@
     <el-main>
         <Common :title="loader.title" :updateTime="loader.updateTime" :sums="loader.sums" :tabs="tabs" :activeName_="loader.activeName"
         @handleClickTab="loader.handleClickTab($event)" />
-    
+
     </el-main>
-    <div style="position: fixed; right: 10px; top: 90px; font-weight: 400; font-family: 宋体 " class="blink">
-        <router-link to="/map">疫情小区</router-link>
-    </div>
-    
+
   </div>
 </template>
 
@@ -34,24 +31,24 @@ export default {
                 {name: 'ok', text: '治愈', color: Utils.Colors[3], sum: 7094, add: "+366"}
             ],
             tabs: [
-                { 
-                    label: "全国实时疫情", name: 'china', ids: ['ecChina', 'ecBar1'], level: 1, 
+                {
+                    label: "全国实时疫情", name: 'china', ids: ['ecChina', 'ecBar1'], level: 1,
                     allTime: 0, data: null, mapName: 'china'
                 },
                 {
-                    label: "时间序列回放", name: 'chinaTime', ids: ['ecChinaTime', 'ecBarTime1'], level: 1, 
+                    label: "时间序列回放", name: 'chinaTime', ids: ['ecChinaTime', 'ecBarTime1'], level: 1,
                     allTime: 1, data: null, mapName: "china"
                 },
                 {
-                    label: "省实时疫情", name: 'province', ids: ['ecProvince', 'ecBar2'], level: 2, 
+                    label: "省实时疫情", name: 'province', ids: ['ecProvince', 'ecBar2'], level: 2,
                     allTime: 0, data: null, mapName: "420000"
                 },
                 {
-                    label: "省舆情回放", name: 'provinceTime', ids: ['ecProvinceTime', 'ecBarTime2'], 
+                    label: "省舆情回放", name: 'provinceTime', ids: ['ecProvinceTime', 'ecBarTime2'],
                     level: 2, allTime: 1, data: null, mapName: '420000'
-                }, 
+                },
                 {
-                    label: "曲线分析", name: "lineChina", ids: ['ecLineChina'], level: 1, isLine: 1, 
+                    label: "曲线分析", name: "lineChina", ids: ['ecLineChina'], level: 1, isLine: 1,
                     allTime: 1, data: null, mapName: "china"
                 }
             ],
@@ -100,7 +97,7 @@ a {
 /* 定义keyframe动画，命名为blink */
 @keyframes blink{
   0%{opacity: 1;}
-  100%{opacity: 0;} 
+  100%{opacity: 0;}
 }
 /* 添加兼容性前缀 */
 @-webkit-keyframes blink {
@@ -112,7 +109,7 @@ a {
     100% { opacity: 0; }
 }
 @-ms-keyframes blink {
-    0% {opacity: 1; } 
+    0% {opacity: 1; }
     100% { opacity: 0;}
 }
 @-o-keyframes blink {
@@ -122,7 +119,7 @@ a {
 /* 定义blink类*/
 .blink{
     color: #dd4814 ;
-    animation: blink 1s linear infinite;  
+    animation: blink 1s linear infinite;
     /* 其它浏览器兼容性前缀 */
     -webkit-animation: blink 1s linear infinite;
     -moz-animation: blink 1s linear infinite;
