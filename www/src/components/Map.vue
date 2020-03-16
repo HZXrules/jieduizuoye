@@ -11,7 +11,6 @@
                 </el-option>
             </el-select>
         </div>
-
         <div style="position: fixed; right: 10px; top: 120px; width: 100px">
               <el-select v-model="mapIndex" size="small" placeholder="请选择" @change="resetMap">
                 <el-option
@@ -27,8 +26,8 @@
             <router-link to="/china">返回</router-link>
         </div>
     </div>
-    
-    
+
+
 </template>
 
 <script>
@@ -50,8 +49,8 @@ export default {
             currentCity: "",
             data: null,
             maps: [
-                {label: '常规地图', map: 'Gaode', type: '0', index: 0}, 
-                {label: '暗黑2.5D', map: 'Gaode', type: '1', index: 1}, 
+                {label: '常规地图', map: 'Gaode', type: '0', index: 0},
+                {label: '暗黑2.5D', map: 'Gaode', type: '1', index: 1},
                 {label: '3D场景', map: 'Gaode', type: '1', index: 2}],
             mapIndex: 1,
             provinces: Object.keys(Provinces).map(k => ({code: k, name: Provinces[k].name}))
@@ -99,12 +98,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 .pageHead {
-  height: 100px !important; 
+  height: 100px !important;
   padding-top: 5px !important;
   padding-bottom: 10px !important;
 }
 #root {
-    height: calc(100% - 115px); 
+    height: calc(100% - 115px);
 }
 a{color: #dd4814}
 .el-input__inner { color: #fff; background-color: #0c2c45}
