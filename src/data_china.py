@@ -94,13 +94,6 @@ def get_time_data(level=1, code=86):
  
     return dict((k, list(dts[k].values())) for k in dts)
 
-'''获取下级行政区域列表'''
-def get_regions(code=86, db=None):
-    if code==86: return src_province
-    if not db: db = Database()
-    sql = "select code, name from region where parent=%s"
-    return [{'name': name, 'code': code} for (code, name) in db.select(sql, (code, ))] 
-    
     
     
 if __name__ == '__main__':
